@@ -7,9 +7,9 @@ void slot(){
   int i;
   
   
-  img1 = loadImage("batt.png");
-  img2 = loadImage("robot.png");
-  img3 = loadImage("denchu.png");
+  img1 = loadImage("Image/batt.png");
+  img2 = loadImage("Image/robot.png");
+  img3 = loadImage("Image/denchu.png");
   
   gazou = new PImage[]{null,img1,img2,img3};  
   //BOX[0]
