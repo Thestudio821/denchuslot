@@ -26,5 +26,4 @@ void draw(){
   slot();
   messeage();
   reset();
-  exit_game();
 }
