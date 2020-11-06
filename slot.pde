@@ -17,10 +17,6 @@ void slot(){
     j = (int)random(3) + 1;
     k = (int)random(3) + 1;
     
-    //text(i, 150, 160);
-    //text(j, 150, 260);
-    //text(k, 150, 360);
-    
     image(gazou[i], 120, 120);
     image(gazou[j], 120, 220);
     image(gazou[k], 120, 320);
@@ -33,9 +29,6 @@ void slot(){
     }
   }
   else if (box[0][0] != 0){
-    //text(box[0][0], 150, 160);
-    //text(box[1][0], 150, 260);
-    //text(box[2][0], 150, 360);
     
     image(gazou[box[0][0]], 120, 120);
     image(gazou[box[1][0]], 120, 220);
@@ -47,9 +40,6 @@ void slot(){
     i = (int)random(3) + 1;
     j = (int)random(3) + 1;
     k = (int)random(3) + 1;
-    //text(i, 250, 160);
-    //text(j, 250, 260);
-    //text(k, 250, 360);
     
     image(gazou[i], 220, 120);
     image(gazou[j], 220, 220);
