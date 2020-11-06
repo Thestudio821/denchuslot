@@ -1,16 +1,29 @@
+PImage img1,img2, img3,gazou[];
+
 void slot(){
   textAlign(CENTER);
   fill(0);
   textSize(30);
   int i, j, k;
+  
+  img1 = loadImage("Image/batt.png");
+  img2 = loadImage("Image/robot.png");
+  img3 = loadImage("Image/denchu.png");
+  
+  gazou = new PImage[]{null,img1,img2,img3};
   // Box of the left
   if (box[0][0] == 0){
     i = (int)random(3) + 1; // Randomly generate from 1 to 3
     j = (int)random(3) + 1;
     k = (int)random(3) + 1;
-    text(i, 150, 160);
-    text(j, 150, 260);
-    text(k, 150, 360);
+    
+    //text(i, 150, 160);
+    //text(j, 150, 260);
+    //text(k, 150, 360);
+    
+    image(gazou[i], 120, 120);
+    image(gazou[j], 120, 220);
+    image(gazou[k], 120, 320);
     if(keyPressed){
       if (keyCode == LEFT){
         box[0][0] = i;         //← Save the value when the key is pressed in the array
@@ -20,9 +33,13 @@ void slot(){
     }
   }
   else if (box[0][0] != 0){
-    text(box[0][0], 150, 160);
-    text(box[1][0], 150, 260);
-    text(box[2][0], 150, 360);
+    //text(box[0][0], 150, 160);
+    //text(box[1][0], 150, 260);
+    //text(box[2][0], 150, 360);
+    
+    image(gazou[box[0][0]], 120, 120);
+    image(gazou[box[1][0]], 120, 220);
+    image(gazou[box[2][0]], 120, 320);
   }
   
   // Box of the center
@@ -30,9 +47,13 @@ void slot(){
     i = (int)random(3) + 1;
     j = (int)random(3) + 1;
     k = (int)random(3) + 1;
-    text(i, 250, 160);
-    text(j, 250, 260);
-    text(k, 250, 360);
+    //text(i, 250, 160);
+    //text(j, 250, 260);
+    //text(k, 250, 360);
+    
+    image(gazou[i], 220, 120);
+    image(gazou[j], 220, 220);
+    image(gazou[k], 220, 320);
     if(keyPressed){
       if (keyCode == DOWN){
         box[0][1] = i;         //← Save the value when the key is pressed in the array
@@ -42,9 +63,9 @@ void slot(){
     }
   }
   else if (box[0][1] != 0){
-    text(box[0][1], 250, 160);
-    text(box[1][1], 250, 260);
-    text(box[2][1], 250, 360);
+    image(gazou[box[0][1]], 220, 120);
+    image(gazou[box[1][1]], 220, 220);
+    image(gazou[box[2][1]], 220, 320);
   }
   
   //Box of the right
@@ -52,9 +73,10 @@ void slot(){
     i = (int)random(3) + 1;
     j = (int)random(3) + 1;
     k = (int)random(3) + 1;
-    text(i, 350, 160);
-    text(j, 350, 260);
-    text(k, 350, 360);
+    
+    image(gazou[i], 320, 120);
+    image(gazou[j], 320, 220);
+    image(gazou[k], 320, 320);
     if(keyPressed){
       if (keyCode == RIGHT){
         box[0][2] = i;         //← Save the value when the key is pressed in the array
@@ -64,8 +86,8 @@ void slot(){
     }
   }
   else if (box[0][2] != 0){
-    text(box[0][2], 350, 160);
-    text(box[1][2], 350, 260);
-    text(box[2][2], 350, 360);
+    image(gazou[box[0][1]], 320, 120);
+    image(gazou[box[1][1]], 320, 220);
+    image(gazou[box[2][1]], 320, 320);
   }
 }
