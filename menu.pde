@@ -8,6 +8,7 @@ final int FAULT = 3;
 public void settings(){ //Now on hold
   size(500, 500);
 }
+
 void setup(){
   //size(500,300);
   strokeWeight(2);

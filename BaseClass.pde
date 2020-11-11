@@ -56,6 +56,6 @@ class player{
   void lever(){
   }
   
-  void stopButton(){
+  void pushButton(){
   }
 }

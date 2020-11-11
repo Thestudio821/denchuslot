@@ -82,7 +82,6 @@ void stopLane(){
   }
 }
 
- 
 void resetLanes(){
    if(lane[0][0] != 0 && lane[0][1] != 0 && lane[0][2] != 0){
      for (int i = 0; i <= 2; i++){
