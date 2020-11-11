@@ -5,12 +5,12 @@ final int GAME = 1;
 final int CLEAR = 2;
 final int FAULT = 3;
 
-public void settings(){ //Now on hold
-  size(500, 500);
-}
+//public void settings(){ //Now on hold
+  //size(500, 500);
+//}
 
 void setup(){
-  //size(500,300);
+  size(500,500);
   strokeWeight(2);
   frameRate(10);
 }
@@ -52,6 +52,7 @@ void game(){
   rect(200,300,100,100);
   rect(300,300,100,100);
   
+  
   // message
   textSize(20);
   fill(0);
@@ -63,7 +64,9 @@ void game(){
   text("D to stop", 350, 450);
   
   pushButton();
-  moveLane();
+  lane1.moveLane(120);
+  lane2.moveLane(220);
+  lane3.moveLane(320);
 }
 
 void quit(){

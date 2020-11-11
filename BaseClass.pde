@@ -1,4 +1,4 @@
-class menu{
+class Menu{
   void setup(){
   }
   

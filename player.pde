@@ -8,7 +8,9 @@ void betCoins(){
 
 void lever(){
   betCoins();
-  moveLane();
+  lane1.moveLane(120);
+  lane2.moveLane(220);
+  lane3.moveLane(320);
 }
 
 void pushButton(){

@@ -5,9 +5,15 @@ void laneControl(){
   if(key == 'q'){
     quit();
   }else if (key == ' '){
-    resetLanes();
-  } else if (key == 'a' || key == 's' || key == 'd'){
-    stopLane();
+    lane1.resetLane();
+    lane2.resetLane();
+    lane3.resetLane();
+  } else if (key == 'a'){
+    lane1.stopLane();
+  } else if (key == 's'){
+    lane2.stopLane();
+  } else if (key == 'd'){
+    lane3.stopLane();
   }
 }
 
