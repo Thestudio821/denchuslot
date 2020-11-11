@@ -1,41 +1,60 @@
-String file[] = {"Image/batt.png","Image/denchu.png","Image/robot.png","Image/oden.png"};
+PImage img1,img2,img3,img[];
 int[][] lane = {{0, 0, 0},{0, 0, 0},{0, 0, 0}};
 int i,j,k;
 
+
 void moveLane(){ //Rotation of the picture
+  img1 = loadImage("Image/batt.png");
+  img2 = loadImage("Image/robot.png");
+  img3 = loadImage("Image/denchu.png");
+  
+  img = new PImage[]{null,img1,img2,img3};  
+  
   textAlign(CENTER);
   fill(0);
   textSize(30);
   
   
   if (lane[0][0] == 0){
-    i = (int)random(9)+1;
-    j = (int)random(9)+1;
-    k = (int)random(9)+1;
-    text(i, 150, 160);
-    text(j, 150, 260);
-    text(k, 150, 360);
+    i = (int)random(3)+1;
+    j = (int)random(3)+1;
+    k = (int)random(3)+1;
+    image(img[i], 120, 120);
+    image(img[j], 120, 220);
+    image(img[k], 120, 320);
   }
   else if(lane[0][0] != 0){
-    text(lane[0][0], 150, 160);
-    text(lane[1][0], 150, 260);
-    text(lane[2][0], 150, 360);
+    image(img[lane[0][0]], 120, 120);
+    image(img[lane[1][0]], 120, 220);
+    image(img[lane[2][0]], 120, 320);
     
   }
   if (lane[0][1] == 0){
-    i = (int)random(9)+1;
-    text(i,250,160);
+    i = (int)random(3)+1;
+    j = (int)random(3)+1;
+    k = (int)random(3)+1;
+    image(img[i], 220, 120);
+    image(img[j], 220, 220);
+    image(img[k], 220, 320);
   }
   else if(lane[0][1] != 0){
-    text(lane[0][1],250,160);
+    image(img[lane[0][1]], 220, 120);
+    image(img[lane[1][1]], 220, 220);
+    image(img[lane[2][1]], 220, 320);
   }
   
   if (lane[0][2] == 0){
-    k = (int)random(9)+1;
-    text(k,350,160);
+    i = (int)random(3)+1;
+    j = (int)random(3)+1;
+    k = (int)random(3)+1;
+    image(img[i], 320, 120);
+    image(img[j], 320, 220);
+    image(img[k], 320, 320); 
   }
   else if(lane[0][2] != 0){
-    text(lane[0][2],350,160);
+    image(img[lane[0][2]], 320, 120);
+    image(img[lane[1][2]], 320, 220);
+    image(img[lane[2][2]], 320, 320);
   }
 }
 
@@ -56,6 +75,8 @@ void stopLane(){
     lane[2][2] = k;
   }
 }
+
+ 
 void resetLanes(){
    if(lane[0][0] != 0 && lane[0][1] != 0 && lane[0][2] != 0){
      for (int i = 0; i <= 2; i++){
