@@ -45,7 +45,15 @@ void game(){
   rect(200,100,100,100);
   rect(300,100,100,100);
   
-  reel();
+  // message
+  textSize(15);
+  text("A to stop", 150, 220);
+  text("S to stop", 250, 220);
+  text("D to stop", 350, 220);
+  
+  pushButton();
+  moveLane();
+  resetLanes();
 }
 
 void quit(){
