@@ -6,7 +6,7 @@ final int CLEAR = 2;
 final int FAULT = 3;
 
 public void settings(){ //Now on hold
-  size(500, 300);
+  size(500, 500);
 }
 void setup(){
   //size(500,300);
@@ -44,16 +44,25 @@ void game(){
   rect(100,100,100,100);
   rect(200,100,100,100);
   rect(300,100,100,100);
+  rect(100,200,100,100);
+  rect(200,200,100,100);
+  rect(300,200,100,100);
+  rect(100,300,100,100);
+  rect(200,300,100,100);
+  rect(300,300,100,100);
   
   // message
+  textSize(20);
+  fill(0);
+  text("count the medals:"+haveCoins,250,80);
   textSize(15);
-  text("A to stop", 150, 220);
-  text("S to stop", 250, 220);
-  text("D to stop", 350, 220);
+  fill(0);
+  text("A to stop", 150, 450);
+  text("S to stop", 250, 450);
+  text("D to stop", 350, 450);
   
   pushButton();
   moveLane();
-  resetLanes();
 }
 
 void quit(){

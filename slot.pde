@@ -2,7 +2,14 @@ int betCoins;
 int magnification;
 
 void laneControl(){
-  stopLane();
+  if(key == 'q'){
+    quit();
+  }else if (key == ' '){
+    
+    resetLanes();
+  } else if (key == 'a' || key == 's' || key == 'd'){
+    stopLane();
+  }
 }
 void calcMagnification(){
   

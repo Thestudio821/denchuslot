@@ -77,6 +77,9 @@ void stopLane(){
     lane[1][2] = j;
     lane[2][2] = k;
   }
+  if (lane[0][0] != 0 && lane[0][1] != 0 && lane[0][2] != 0 && haveCoins <= 0){
+    state = FAULT;
+  }
 }
 
  
