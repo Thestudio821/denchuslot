@@ -13,28 +13,18 @@ class Slot{
   Lane rightLane = new Lane(rightPoint);
   
   void laneControl(){
-    switch(key){
-      case 'q':
-        quit();
-        break;
-      
-      case ' ':
-        leftLane.resetLane();
-        centerLane.resetLane();
-        rightLane.resetLane();
-        break;
-        
-      case 'a':
-        leftLane.stopLane();
-        break;
-      
-      case 's':
-        centerLane.stopLane();
-        break;
-      
-      case 'd':
-        rightLane.stopLane();
-        break;
+      if(key == 'q'){
+      quit();
+    }else if (key == ' ' && leftLane.lane[0] != 0 && centerLane.lane[0] != 0 && rightLane.lane[0] != 0){
+      leftLane.resetLane();
+      centerLane.resetLane();
+      rightLane.resetLane();
+    } else if (key == 'a'){
+      leftLane.stopLane();
+    } else if (key == 's'){
+      centerLane.stopLane();
+    } else if (key == 'd'){
+      rightLane.stopLane();
     }
   }
   
