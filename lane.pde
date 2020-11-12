@@ -1,8 +1,12 @@
 class Lane{
+  Lane(int point){
+    this.point = point;
+  }
+  
   PImage img1,img2,img3,img4,img5,img6,img7,img[];
-  int i,j,k;
+  int i,j,k,point;
   int lane[] = {0,0,0};
-  void moveLane(int point){
+  void moveLane(){
     img1 = loadImage("Image/batt.png");
     img2 = loadImage("Image/robot.png");
     img3 = loadImage("Image/denchu.png");
@@ -35,13 +39,11 @@ class Lane{
     }
   }
   void resetLane(){
+    
      if(lane[0]!= 0 && lane[1] != 0 && lane[2] != 0){
-      lane[0] = 0;
+       lane[0] = 0;
        lane[1] = 0;
        lane[2] = 0;
     }
   }
 }
-  Lane lane1 = new Lane();
-  Lane lane2 = new Lane();
-  Lane lane3 = new Lane();

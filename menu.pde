@@ -5,7 +5,9 @@ final int GAME = 1;
 final int CLEAR = 2;
 final int FAULT = 3;
 
-//public void settings(){ //Now on hold
+Player player = new Player();
+
+//public void settings(){
   //size(500, 500);
 //}
 
@@ -53,20 +55,19 @@ void game(){
   rect(300,300,100,100);
   
   
+  
   // message
   textSize(20);
   fill(0);
-  text("count the medals:"+haveCoins,250,80);
+  text("count the medals:"+player.haveCoins,250,80);
   textSize(15);
   fill(0);
   text("A to stop", 150, 450);
   text("S to stop", 250, 450);
   text("D to stop", 350, 450);
   
-  pushButton();
-  lane1.moveLane(120);
-  lane2.moveLane(220);
-  lane3.moveLane(320);
+  player.pushButton();
+  player.lever();
 }
 
 void quit(){

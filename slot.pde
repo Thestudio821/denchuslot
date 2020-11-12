@@ -1,38 +1,60 @@
-int betCoins;
-int magnification;
-
-void laneControl(){
-  if(key == 'q'){
-    quit();
-  }else if (key == ' '){
-    lane1.resetLane();
-    lane2.resetLane();
-    lane3.resetLane();
-  } else if (key == 'a'){
-    lane1.stopLane();
-  } else if (key == 's'){
-    lane2.stopLane();
-  } else if (key == 'd'){
-    lane3.stopLane();
+class Slot{
+  Slot(){}
+  
+  int betCoins;
+  int magnification;
+  
+  final int leftPoint = 120;
+  final int centerPoint = 220;
+  final int rightPoint = 320;
+  
+  Lane leftLane = new Lane(leftPoint);
+  Lane centerLane = new Lane(centerPoint);
+  Lane rightLane = new Lane(rightPoint);
+  
+  void laneControl(){
+    switch(key){
+      case 'q':
+        quit();
+        break;
+      
+      case ' ':
+        leftLane.resetLane();
+        centerLane.resetLane();
+        rightLane.resetLane();
+        break;
+        
+      case 'a':
+        leftLane.stopLane();
+        break;
+      
+      case 's':
+        centerLane.stopLane();
+        break;
+      
+      case 'd':
+        rightLane.stopLane();
+        break;
+    }
   }
-}
-
-void calcMagnification(){
   
-}
-
-void calcCoins(){
+  void calcMagnification(){
+    
+  }
   
-}
-
-void message(){
+  void calcCoins(){
+    
+  }
   
-}
-
-void isGameClear(){
+  void message(){
+    
+  }
   
-}
-
-void isGameOver(){
+  void isGameClear(){
+    
+  }
   
+  void isGameOver(){
+    
+  }
 }
