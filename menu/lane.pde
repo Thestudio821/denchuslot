@@ -46,3 +46,28 @@ class Lane{
     }
   }
 }
+
+class TestLane{
+  int leftLane = 120;
+  Lane testLane = new Lane(leftLane);
+  
+  void testMoveLane(){
+    testLane.lane[0] = testLane.lane[1] = testLane.lane[2] = 1;
+    testLane.moveLane();
+    assert testLane.lane[0] == 1  : "moveLane Error";
+  }
+  void testStopLane(){
+    testLane.lane[0] = testLane.lane[1] = testLane.lane[2] = 2;
+    testLane.stopLane();
+    assert testLane.lane[0] == 2  : "stopLane Error1";
+
+    testLane.lane[0] = testLane.lane[1] = testLane.lane[2] = 0;
+    testLane.i = testLane.j = testLane.k = 2;
+    testLane.stopLane();
+    assert testLane.lane[0] == 2  : "stopLane Error2";
+  }
+  void testResetLane(){
+    testLane.resetLane();
+    assert testLane.lane[0] == 0  : "resetLane Error";
+  }
+}

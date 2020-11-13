@@ -69,3 +69,14 @@ class Slot{
   }
   
 }
+
+class testSlot{
+  Slot testSlot = new Slot();
+
+  
+  void testCalcMagnification(){}
+  void testCalcCoins(){}
+  void testMessage(){}
+  void testIsGameClear(){}
+  void testIsGameOver(){}
+}

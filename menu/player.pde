@@ -13,3 +13,14 @@ class Player{
     }
   }
 }
+
+class TestPlayer{
+  Player  testPlayer = new Player();
+
+  void testBetCoins(){
+    int expected = 190;
+    testPlayer.haveCoins = 200;
+    testPlayer.betCoins();
+    assert testPlayer.haveCoins == expected  : "testBetCoins Error. expected:"+expected+" but got:"+testPlayer.haveCoins;
+  }
+}
