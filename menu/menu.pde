@@ -29,9 +29,6 @@ void draw(){
   }
 }
 
-void changescene(){
-  
-}
 void title(){
   background(255); 
   fill(0);
@@ -62,7 +59,7 @@ void game(){
   textSize(20);
   fill(0);
   text("count the medals:"+slot.player.haveCoins,380,20);
-  
+  text("Trials:"+slot.trials,50,30);
   textSize(15);
   fill(0);
   text("Please space key",250,90);
