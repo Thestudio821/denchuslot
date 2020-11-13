@@ -12,10 +12,13 @@ class Slot{
   Lane centerLane = new Lane(centerPoint);
   Lane rightLane = new Lane(rightPoint);
   
+  Player player = new Player();
+  
   void laneControl(){
       if(key == 'q'){
       quit();
     }else if (key == ' ' && leftLane.lane[0] != 0 && centerLane.lane[0] != 0 && rightLane.lane[0] != 0){
+      player.betCoins();
       leftLane.resetLane();
       centerLane.resetLane();
       rightLane.resetLane();
@@ -26,6 +29,12 @@ class Slot{
     } else if (key == 'd'){
       rightLane.stopLane();
     }
+  }
+  
+  void lever(){//sltmove
+      leftLane.moveLane();
+      centerLane.moveLane();
+      rightLane.moveLane();
   }
   
   void calcMagnification(){

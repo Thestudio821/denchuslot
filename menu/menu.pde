@@ -4,11 +4,9 @@ final int START = 0;
 final int GAME = 1;
 final int CLEAR = 2;
 final int FAULT = 3;
-final int NOP = 4;
-
-Player player = new Player();
 
 Slot slot = new Slot();
+
 //public void settings(){
   //size(500, 500);
 //}
@@ -64,15 +62,15 @@ void game(){
   // message
   textSize(20);
   fill(0);
-  text("count the medals:"+player.haveCoins,250,80);
+  text("count the medals:"+slot.player.haveCoins,250,80);
   textSize(15);
   fill(0);
   text("A to stop", 150, 450);
   text("S to stop", 250, 450);
   text("D to stop", 350, 450);
   
-  player.pushButton();
-  player.lever();
+  slot.player.pushButton();
+  slot.lever();
 }
 void quit(){
   exit();
