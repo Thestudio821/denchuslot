@@ -1,7 +1,6 @@
 class Player{
-  int targetCoins;
-  int haveCoins = 100;
   
+  int haveCoins = 100;
   
   void betCoins(){
     int cost = 10;

@@ -1,8 +1,9 @@
- class Slot{
+class Slot{
   Slot(){}
   
   int betCoins;
   int magnification;
+  int targetCoins = 120;
   
   final int leftPoint = 120;
   final int centerPoint = 220;
@@ -18,7 +19,7 @@
       if(key == 'q'){
       quit();
     }else if (key == ' ' && leftLane.lane[0] != 0 && centerLane.lane[0] != 0 && rightLane.lane[0] != 0){
-      player.betCoins();
+      decision();
       leftLane.resetLane();
       centerLane.resetLane();
       rightLane.resetLane();
@@ -31,7 +32,7 @@
     }
   }
   
-  void lever(){//sltmove
+  void lever(){
       leftLane.moveLane();
       centerLane.moveLane();
       rightLane.moveLane();
@@ -49,13 +50,24 @@
     
   }
   
-  void isGameClear(){
-    
+  void decision(){
+    if (player.haveCoins >= targetCoins){
+      isGameClear();
+    } else if (player.haveCoins <= 0){
+      isGameOver();
+    }
+    player.betCoins();
   }
   
+  void isGameClear(){
+      state = CLEAR;
+    }
+  
+  
   void isGameOver(){
-    
+      state = FAULT;
   }
+  
 }
 
 class testSlot{

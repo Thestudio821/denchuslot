@@ -5,7 +5,7 @@ class Lane{
   
   PImage img1,img2,img3,img4,img5,img6,img7,img[];
   int i,j,k,point;
-  int lane[] = {0,0,0};
+  int lane[] = {3,3,3};
   void moveLane(){
     img1 = loadImage("Image/batt.png");
     img2 = loadImage("Image/robot.png");
