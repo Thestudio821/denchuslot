@@ -3,6 +3,7 @@ class Slot{
   
   int betCoins;
   int magnification;
+  int targetCoins = 120;
   
   final int leftPoint = 120;
   final int centerPoint = 220;
@@ -50,7 +51,7 @@ class Slot{
   }
   
   void decision(){
-    if (player.haveCoins >= player.targetCoins){
+    if (player.haveCoins >= targetCoins){
       isGameClear();
     } else if (player.haveCoins <= 0){
       isGameOver();
