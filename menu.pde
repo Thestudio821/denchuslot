@@ -4,9 +4,11 @@ final int START = 0;
 final int GAME = 1;
 final int CLEAR = 2;
 final int FAULT = 3;
+final int NOP = 4;
 
 Player player = new Player();
 
+Slot slot = new Slot();
 //public void settings(){
   //size(500, 500);
 //}
@@ -18,17 +20,37 @@ void setup(){
 }
 
 void draw(){ 
-  if (state == START) {
-    title();
+ if (state == START) {
+    if (keyPressed) {
+      changeScene(GAME);
+    }
   } else if (state == GAME) {
-    game();
+    player.pushButton();
+    player.lever();
   } else if (state == CLEAR) {
-    gameClear();
+    changeScene(GAME);
   } else if (state == FAULT) {
-    gameOver();
+    if (keyPressed) {
+      changeScene(GAME);
+    }
   }
 }
 
+void changeScene(int sceneNum){
+  if(sceneNum == START){
+    state = START;
+    title();
+  }else if(sceneNum == GAME){
+    state = GAME;
+    game();
+  }else if(sceneNum == CLEAR){
+    state = CLEAR;
+    gameClear();
+  }else if(sceneNum == FAULT){
+    state = FAULT;
+    gameOver();
+  }
+}
 void title(){
   background(255); 
   fill(0);
@@ -69,7 +91,6 @@ void game(){
   player.pushButton();
   player.lever();
 }
-
 void quit(){
   exit();
 }

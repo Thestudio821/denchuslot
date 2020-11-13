@@ -9,7 +9,8 @@ class Player{
     haveCoins -= cost;
   }
   
-  void lever(){
+  void lever(){//sltmove
+      betCoins();
       slot.leftLane.moveLane();
       slot.centerLane.moveLane();
       slot.rightLane.moveLane();
