@@ -59,15 +59,16 @@ void game(){
   
   
   
-  // message
   textSize(20);
   fill(0);
-  text("count the medals:"+slot.player.haveCoins,250,80);
+  text("count the medals:"+slot.player.haveCoins,380,20);
+  
   textSize(15);
   fill(0);
-  text("A to stop", 150, 450);
-  text("S to stop", 250, 450);
-  text("D to stop", 350, 450);
+  text("Please space key",250,90);
+  text("A to stop", 150, 420);
+  text("S to stop", 250, 420);
+  text("D to stop", 350, 420);
   
   slot.player.pushButton();
   slot.lever();
@@ -82,9 +83,12 @@ void gameClear(){
   textSize(24);
   textAlign(CENTER);
   text("Game Clear", width * 0.5, height * 0.3);
-  text("Press any key to start", width * 0.5, height * 0.7);
+  text("Press any key to Restart", width * 0.5, height * 0.7);
+  
   if (keyPressed) {
-    state = GAME;
+    delay(1000);
+    state = START;
+    slot.player.haveCoins = 100;
   }
 }
 
@@ -94,8 +98,11 @@ void gameOver(){
   textSize(24);
   textAlign(CENTER);
   text("Game Over", width * 0.5, height * 0.3);
-  text("Press any key to start", width * 0.5, height * 0.7);
+  text("Press any key to Restart", width * 0.5, height * 0.7);
+  
   if (keyPressed) {
-    state = GAME;
+    delay(1000);
+    state = START;
+    slot.player.haveCoins = 100;
   }
 }
