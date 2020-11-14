@@ -1,18 +1,22 @@
 class Slot{
   Slot(){}
-  int trials;
-  int betCoins;
-  int magnification;
   
+  int result = 0;
+  int NONE = 0;
+  int WIN = 1;
+  int LOSE = 2;
+  
+  int trials;
   int targetCoins = 10000;
   
+  int magnification;
   int batt = 1;
   int robot = 2;
-  int denchu = 3;
+  int denchu = 7;
   int daikonn = 4;
   int konnnyaku = 5;
   int egg = 6;
-  int chikuwa = 7;
+  
   int[] magnificationList = new int[9]; 
   
   final int leftPoint = 120;
@@ -24,28 +28,40 @@ class Slot{
   Lane rightLane = new Lane(rightPoint);
   
   Player player = new Player();
-  
-  void laneControl(){
-      if(key == 'q'){
+  void coreControl(){
+    if(key == 'q'){
       quit();
-    }else if (key == ' ' && leftLane.lane[0] != 0 && centerLane.lane[0] != 0 && rightLane.lane[0] != 0){
-      if (trials != 0){
-        calcMagnification();
-        decision();
-      }
-      trials++;
-      leftLane.resetLane();
-      centerLane.resetLane();
-      rightLane.resetLane();
-    } else if (key == 'a'){
-      leftLane.stopLane();
-    } else if (key == 's'){
-      centerLane.stopLane();
-    } else if (key == 'd'){
-      rightLane.stopLane();
+    }else if(key == 'r'){
+      state = START;
+      leftLane.RestartLane();
+      centerLane.RestartLane();
+      rightLane.RestartLane();
+    } else {
+      laneControl();
     }
+    
+  }
+  void laneControl(){
+      if (key == ' ' && leftLane.lane[0] != 0 && centerLane.lane[0] != 0 && rightLane.lane[0] != 0){
+        result = NONE;
+        if (trials != 0){
+          calcMagnification();
+          decision();
+        }
+        trials++;
+        leftLane.resetLane();
+        centerLane.resetLane();
+        rightLane.resetLane();
+      } else if (key == 'a'){
+        leftLane.stopLane();
+      } else if (key == 's'){
+        centerLane.stopLane();
+      } else if (key == 'd'){
+        rightLane.stopLane();
+      }
   }
   
+
   void lever(){
       leftLane.moveLane();
       centerLane.moveLane();
@@ -89,12 +105,18 @@ class Slot{
           calcMagniList();
           magnificationList = new int[9]; 
       } else {
+          result = LOSE;
+          message();
+          
           calcMagniList();
           magnificationList = new int[9]; 
           
       }
   }
   void magniSwitch(int firstLane){
+      result = WIN;
+      message();
+      
       switch(firstLane){
           case 1:
               magnificationList[magnificationList[0]] = batt;
@@ -114,9 +136,7 @@ class Slot{
           case 6:
               magnificationList[magnificationList[0]] = egg;
               break;
-          case 7:
-              magnificationList[magnificationList[0]] = chikuwa;      
-              break;
+          
       }
   }
   
@@ -129,11 +149,17 @@ class Slot{
   }
   
   void calcCoins(){
-     player.haveCoins += magnification;
+     player.haveCoins += magnification * player.cost;
   }
   
   void message(){
-    
+    if (result == LOSE){
+      text("YOU LOSE",100,100);
+    }else if (result == WIN){
+      text("YOU WIN",100,100);
+    }else if (result == NONE){
+      text("Waithing...",100,100);
+    } 
   }
   
   void decision(){
@@ -153,9 +179,7 @@ class Slot{
   void isGameOver(){
       state = FAULT;
   }
-  
 }
-
 class TestSlot{
   Slot testSlot = new Slot();
 

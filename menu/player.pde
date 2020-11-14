@@ -1,15 +1,15 @@
 class Player{
   
   int haveCoins = 100;
+  int cost = 10;
   
   void betCoins(){
-    int cost = 10;
     haveCoins -= cost;
   }
   
   void pushButton(){
     if (keyPressed){
-      slot.laneControl();
+      slot.coreControl();
     }
   }
 }

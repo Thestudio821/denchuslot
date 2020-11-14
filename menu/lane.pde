@@ -3,7 +3,7 @@ class Lane{
     this.point = point;
   }
   
-  PImage img1,img2,img3,img4,img5,img6,img7,img[];
+  PImage img1,img2,img3,img4,img5,img6,img[];
   int i,j,k,point;
   int lane[] = {3,3,3};
   void moveLane(){
@@ -13,8 +13,8 @@ class Lane{
     img4 = loadImage("Image/daikon.png");
     img5 = loadImage("Image/konnyaku.png");
     img6 = loadImage("Image/egg.png");
-    img7 = loadImage("Image/chikuwa.png");
-    img = new PImage[]{null,img1,img2,img3,img4,img5,img6,img7};
+    //img7 = loadImage("Image/chikuwa.png");
+    img = new PImage[]{null,img1,img2,img3,img4,img5,img6};
     
      if (lane[0] == 0){
         i = (int)random(1,img.length);
@@ -44,6 +44,11 @@ class Lane{
        lane[1] = 0;
        lane[2] = 0;
     }
+  }
+  void RestartLane(){
+     lane[0] = 3;
+     lane[1] = 3;
+     lane[2] = 3;
   }
 }
 

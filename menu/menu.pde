@@ -41,6 +41,9 @@ void draw(){
 }
 
 void title(){
+  slot.player.haveCoins = 100;
+  slot.trials = 0;
+  
   background(255); 
   fill(0);
   textSize(24);
@@ -49,6 +52,7 @@ void title(){
   text("Press any key to start", width * 0.5, height * 0.7);
   if (keyPressed) {
     state = GAME;
+    
   }
 }
 
@@ -73,6 +77,7 @@ void game(){
   text("Trials:"+slot.trials,50,30);
   textSize(15);
   fill(0);
+  slot.message();
   text("Please space key",250,90);
   text("A to stop", 150, 420);
   text("S to stop", 250, 420);
@@ -92,7 +97,6 @@ void gameClear(){
   textAlign(CENTER);
   text("Game Clear", width * 0.5, height * 0.3);
   text("Press any key to Restart", width * 0.5, height * 0.7);
-  
   if (keyPressed) {
     delay(1000);
     state = START;
