@@ -15,6 +15,17 @@ void setup(){
   size(500,500);
   strokeWeight(2);
   frameRate(10);
+
+  TestLane laneTester = new TestLane();
+  laneTester.testMoveLane();
+  laneTester.testStopLane();
+  laneTester.testResetLane();
+
+  TestSlot slotTester = new TestSlot();
+  slotTester.testDecision();
+
+  TestPlayer playerTester = new TestPlayer();
+  playerTester.testBetCoins();
 }
 
 void draw(){ 

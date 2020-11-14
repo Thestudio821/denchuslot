@@ -51,23 +51,31 @@ class TestLane{
   int leftLane = 120;
   Lane testLane = new Lane(leftLane);
   
+  //laneの値が0以外の時に回転しないかのテスト
   void testMoveLane(){
+    int expected = 1;
     testLane.lane[0] = testLane.lane[1] = testLane.lane[2] = 1;
     testLane.moveLane();
-    assert testLane.lane[0] == 1  : "moveLane Error";
+    assert testLane.lane[0] == expected  : "moveLane Error. expected:"+expected+" but got:"+testLane.lane[0];
   }
   void testStopLane(){
+    //laneの値が0以外の時のテスト
+    int expected = 2;
     testLane.lane[0] = testLane.lane[1] = testLane.lane[2] = 2;
     testLane.stopLane();
-    assert testLane.lane[0] == 2  : "stopLane Error1";
+    assert testLane.lane[0] == expected  : "stopLane Error1. expected:"+expected+" but got:"+testLane.lane[0];
 
+    //laneの値が0の時のテスト
+    expected = 3;
     testLane.lane[0] = testLane.lane[1] = testLane.lane[2] = 0;
-    testLane.i = testLane.j = testLane.k = 2;
+    testLane.i = testLane.j = testLane.k = 3;
     testLane.stopLane();
-    assert testLane.lane[0] == 2  : "stopLane Error2";
+    assert testLane.lane[0] == expected  : "stopLane Error2. expected:"+expected+" but got:"+testLane.lane[0];
   }
   void testResetLane(){
+    //resetLaneのテスト
+    int expected = 0;
     testLane.resetLane();
-    assert testLane.lane[0] == 0  : "resetLane Error";
+    assert testLane.lane[0] == expected  : "resetLane Error. expected:"+expected+" but got:"+testLane.lane[0];
   }
 }

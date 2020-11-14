@@ -156,13 +156,25 @@ class Slot{
   
 }
 
-class testSlot{
+class TestSlot{
   Slot testSlot = new Slot();
 
   
   void testCalcMagnification(){}
   void testCalcCoins(){}
   void testMessage(){}
-  void testIsGameClear(){}
-  void testIsGameOver(){}
+  void testDecision(){
+
+    //game clear test
+    testSlot.player.haveCoins = testSlot.targetCoins + 1;
+    testSlot.decision();
+    assert state == CLEAR : "decision error. expected:CLEAR(=2) but got:" + state;
+    state = START;
+    
+    //game over test
+    testSlot.player.haveCoins = 0;
+    testSlot.decision();
+    assert state == FAULT : "decision error. expected:FAULT(=3) but got:" + state;
+    state = START;
+  }
 }
