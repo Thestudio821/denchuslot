@@ -83,4 +83,9 @@ class TestLane{
     testLane.resetLane();
     assert testLane.lane[0] == expected  : "resetLane Error. expected:"+expected+" but got:"+testLane.lane[0];
   }
+  void testRestartalane(){
+    //restartLaneのテスト
+    int expected = 3;
+    assert testLane.lane[0] == expected  : "restartLane Error. expected:"+expected+"but got:"+testLane.lane[0];
+  }
 }
