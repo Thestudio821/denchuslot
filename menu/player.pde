@@ -1,6 +1,6 @@
 class Player{
   
-  int haveCoins = 100;
+  int haveCoins = 30;
   int cost = 10;
   
   void betCoins(){

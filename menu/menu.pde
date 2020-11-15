@@ -43,7 +43,9 @@ void draw(){
 void title(){
   slot.player.haveCoins = 100;
   slot.trials = 0;
-  
+  slot.leftLane.RestartLane();
+  slot.centerLane.RestartLane();
+  slot.rightLane.RestartLane();
   background(255); 
   fill(0);
   textSize(24);
