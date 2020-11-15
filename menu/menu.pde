@@ -95,11 +95,13 @@ void quit(){
 }
 
 void gameClear(){
-  background(255); 
+  PImage clearImage = loadImage("Image/gameClear.png");
+  clearImage.resize(500, 500);
+
+  background(clearImage); 
   fill(0);
   textSize(24);
   textAlign(CENTER);
-  text("Game Clear", width * 0.5, height * 0.3);
   text("Press any key to Restart", width * 0.5, height * 0.7);
   if (keyPressed) {
     delay(1000);
@@ -109,11 +111,13 @@ void gameClear(){
 }
 
 void gameOver(){
-  background(255); 
+  PImage overImage = loadImage("Image/gameOver.png");
+  overImage.resize(500, 500);
+
+  background(overImage); 
   fill(0);
   textSize(24);
   textAlign(CENTER);
-  text("Game Over", width * 0.5, height * 0.3);
   text("Press any key to Restart", width * 0.5, height * 0.7);
   
   if (keyPressed) {
