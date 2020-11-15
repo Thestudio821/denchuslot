@@ -177,11 +177,15 @@ class Slot{
   
   void message(){
     if (result == LOSE){
-      text("YOU LOSE",250,480);
+      textSize(30);
+      text("YOU LOSE",180,80);
+      textSize(15);
     }else if (result == WIN){
-      text("YOU WIN",250,480);
+      textSize(30);
+      text("YOU WIN",180,80);
+      textSize(15);
     }else if (result == NONE){
-      text("Waithing...",250,480);
+      text("Waithing...",215,480);
     } 
   }
   

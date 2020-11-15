@@ -75,15 +75,17 @@ void game(){
   
   textSize(20);
   fill(0);
-  text("count the medals:"+slot.player.haveCoins,380,20);
-  text("Trials:"+slot.trials,50,30);
+  textAlign(LEFT);
+  text("Medals:"+slot.player.haveCoins,10,50);
+  text("Trials:"+slot.trials,10,30);
   textSize(15);
   fill(0);
   slot.message();
-  text("Please space key",250,90);
-  text("A to stop", 150, 420);
-  text("S to stop", 250, 420);
-  text("D to stop", 350, 420);
+  text("Space:Restart the slot",10,450);
+  text("B:Back to the title",10,470);
+  text("A to stop", 120, 420);
+  text("S to stop", 220, 420);
+  text("D to stop", 320, 420);
   
   slot.player.pushButton();
   slot.lever();
