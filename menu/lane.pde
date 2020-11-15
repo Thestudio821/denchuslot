@@ -16,7 +16,7 @@ class Lane{
     //img7 = loadImage("Image/chikuwa.png");
     img = new PImage[]{null,img1,img2,img3,img4,img5,img6};
     
-     if (lane[0] == 0){
+     if (lane[1] == 0){
         i = (int)random(1,img.length);
         j = (int)random(1,img.length); 
         k = (int)random(1,img.length);
