@@ -202,21 +202,13 @@ class Slot{
       state = CLEAR;
     }
   
-  
   void isGameOver(){
       state = FAULT;
   }
-  
 }
 
 class TestSlot{
   Slot testSlot = new Slot();
-
-  
-  void testCalcMagnification(){}
-  void testCalcCoins(){}
-  void testMessage(){}
-  void testDecision(){
 
     //game clear test
     testSlot.player.haveCoins = testSlot.targetCoins + 1;

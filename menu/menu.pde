@@ -7,10 +7,6 @@ final int FAULT = 3;
 
 Slot slot = new Slot();
 
-//public void settings(){
-  //size(500, 500);
-//}
-
 void setup(){
   size(500,500);
   strokeWeight(2);

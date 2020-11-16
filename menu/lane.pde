@@ -13,7 +13,6 @@ class Lane{
     img4 = loadImage("Image/daikon.png");
     img5 = loadImage("Image/konnyaku.png");
     img6 = loadImage("Image/egg.png");
-    //img7 = loadImage("Image/chikuwa.png");
     img = new PImage[]{null,img1,img2,img3,img4,img5,img6};
     
      if (lane[1] == 0){

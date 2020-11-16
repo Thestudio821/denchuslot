@@ -17,6 +17,7 @@ class Player{
 class TestPlayer{
   Player  testPlayer = new Player();
 
+  //betCoins()のテスト
   void testBetCoins(){
     int expected = 190;
     testPlayer.haveCoins = 200;
