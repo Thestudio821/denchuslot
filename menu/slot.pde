@@ -38,7 +38,7 @@ class Slot{
   void coreControl(){
     if(key == 'q'){
       quit();
-    }else if(key == 'r'){
+    }else if(key == 'b'){
       state = START;
       leftLane.RestartLane();
       centerLane.RestartLane();
