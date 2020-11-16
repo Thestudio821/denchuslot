@@ -210,6 +210,7 @@ class Slot{
 class TestSlot{
   Slot testSlot = new Slot();
 
+  void testDicision(){
     //game clear test
     testSlot.player.haveCoins = testSlot.targetCoins + 1;
     testSlot.decision();
